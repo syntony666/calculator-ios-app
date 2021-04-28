@@ -15,6 +15,8 @@
 		EA0923A926368D4000DBB0B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA0923A726368D4000DBB0B1 /* LaunchScreen.storyboard */; };
 		EA0923DB2636B96A00DBB0B1 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0923DA2636B96A00DBB0B1 /* CalculatorController.swift */; };
 		EA0923DF26373A3A00DBB0B1 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0923DE26373A3A00DBB0B1 /* CalculatorModel.swift */; };
+		EA4C54CC2639BC4200B69A54 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EA4C54CB2639BC4200B69A54 /* LICENSE */; };
+		EA4C54CF2639BC6900B69A54 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EA4C54CE2639BC6900B69A54 /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EA0923AA26368D4000DBB0B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0923DA2636B96A00DBB0B1 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
 		EA0923DE26373A3A00DBB0B1 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		EA4C54CB2639BC4200B69A54 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EA4C54CE2639BC6900B69A54 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 		EA09239026368D3E00DBB0B1 = {
 			isa = PBXGroup;
 			children = (
+				EA4C54CE2639BC6900B69A54 /* readme.md */,
+				EA4C54CB2639BC4200B69A54 /* LICENSE */,
 				EA09239B26368D3E00DBB0B1 /* calculator */,
 				EA09239A26368D3E00DBB0B1 /* Products */,
 			);
@@ -132,6 +138,8 @@
 			files = (
 				EA0923A926368D4000DBB0B1 /* LaunchScreen.storyboard in Resources */,
 				EA0923A626368D4000DBB0B1 /* Assets.xcassets in Resources */,
+				EA4C54CC2639BC4200B69A54 /* LICENSE in Resources */,
+				EA4C54CF2639BC6900B69A54 /* readme.md in Resources */,
 				EA0923A426368D3E00DBB0B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

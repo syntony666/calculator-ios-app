@@ -25,9 +25,9 @@ class ViewController: UIViewController {
         didSet{
             var text: String = "";
             for symbol in calculateProcess {
-                text += symbol;
+                text += symbol + " ";
             }
-            calculateProcessLabel.text = "\(text) = "
+            calculateProcessLabel.text = "\(text)"
         }
     }
     
@@ -120,6 +120,11 @@ class ViewController: UIViewController {
     
     @IBAction func divideButton(_ sender: Any) {
         calculator.addSymbol(symbol: "/")
+        updateView()
+    }
+    
+    @IBAction func equalButton(_ sender: Any) {
+        calculator.addSymbol(symbol: "=")
         updateView()
     }
     

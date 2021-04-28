@@ -17,45 +17,69 @@ class CalculatorModel {
         allClear();
     }
     
+    func setNumber(number: String) {
+        lastNumber = number;
+        if lastSymbol == "=" {
+            processStack = []
+        }
+    }
+    
+    func setSymbol(symbol: String) {
+        if ["%", "-/+"].contains(symbol){
+            processStack.append(lastNumber)
+            if symbol == "%" {
+                lastNumber = "\(Double(lastNumber)! * 0.01)"
+            }
+            if symbol == "-/+" {
+                lastNumber = "\(Double(lastNumber)! * -1)"
+            }
+            processStack.append(symbol)
+        }
+        else {
+           newSymbol = symbol
+        }
+        if processStack.count != 0 && processStack.last! == "=" {
+            lastNumber = tempResult.stringValue
+            processStack = []
+        }
+    }
+    
+    func calculateResult() {
+        var result: Double = 0.0
+        if lastSymbol == "" {
+            result = Double(lastNumber)!
+        }
+        else if lastSymbol == "+" {
+            result = tempResult.doubleValue + Double(lastNumber)!
+        }
+        else if lastSymbol == "-" {
+            result = tempResult.doubleValue - Double(lastNumber)!
+        }
+        else if lastSymbol == "*" {
+            result = tempResult.doubleValue * Double(lastNumber)!
+        }
+        else if lastSymbol == "/" {
+            result = tempResult.doubleValue / Double(lastNumber)!
+        }
+        else if lastSymbol == "=" {
+            result = Double(lastNumber)!
+        }
+        
+        if !(processStack.count != 0 && ["%", "-/+"].contains(processStack.last!)) {
+            processStack.append(lastNumber)
+        }
+        tempResult = NSNumber(value: result)
+        processStack.append(newSymbol)
+        lastNumber = "0"
+        lastSymbol = newSymbol
+        print(lastNumber!, lastSymbol!, processStack!)
+    }
+    
     func allClear() {
         tempResult = 0;
         lastSymbol = "";
         lastNumber = "0";
         processStack = [];
-    }
-    
-    func setNumber(number: String) {
-        lastNumber = number;
-    }
-    
-    func setSymbol(symbol: String) {
-        newSymbol = symbol
-    }
-    
-    func calculateResult() {
-        if lastSymbol == "" {
-            tempResult = NSNumber(value: Double(lastNumber)!)
-        }
-        else if lastSymbol == "+" {
-            let result = tempResult.doubleValue + Double(lastNumber)!
-            tempResult = NSNumber(value: result)
-        }
-        else if lastSymbol == "-" {
-            let result = tempResult.doubleValue - Double(lastNumber)!
-            tempResult = NSNumber(value: result)
-        }
-        else if lastSymbol == "*" {
-            let result = tempResult.doubleValue * Double(lastNumber)!
-            tempResult = NSNumber(value: result)
-        }
-        else if lastSymbol == "/" {
-            let result = tempResult.doubleValue / Double(lastNumber)!
-            tempResult = NSNumber(value: result)
-        }
-        processStack.append(lastNumber)
-        processStack.append(newSymbol)
-        lastNumber = "0"
-        lastSymbol = newSymbol
     }
     
     func getNumber() -> String {
@@ -72,15 +96,5 @@ class CalculatorModel {
     
     func getResult() -> NSNumber {
         return tempResult;
-    }
-    
-    func pushLastNumber() {
-        processStack.append(lastNumber)
-        lastNumber = "0"
-    }
-    
-    func pushLastSymbol() {
-        processStack.append(lastSymbol)
-        lastSymbol = ""
     }
 }

@@ -36,6 +36,9 @@
                                 <state key="normal" title="%">
                                     <color key="titleColor" red="0.18286512305699487" green="0.18286512305699487" blue="0.18286512305699487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="percentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xBV-TQ-h1W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="B69-4L-zbY">
                                 <rect key="frame" x="105" y="329" width="100" height="100"/>
@@ -47,7 +50,6 @@
                                 </state>
                                 <connections>
                                     <action selector="inverseNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OB0-HW-5NC"/>
-                                    <action selector="percentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j01-hm-VDC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0Bf-qi-PTr">
@@ -214,6 +216,9 @@
                                 <state key="normal" title="=">
                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="equalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P5y-9P-kKe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KRr-bI-2tL">
                                 <rect key="frame" x="207" y="737" width="100" height="100"/>

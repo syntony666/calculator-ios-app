@@ -25,7 +25,12 @@ class CalculatorController {
                 if calculatorModel.getNumber() == "0" {
                     calculatorModel.setNumber(number: symbol)
                 }
-                else {
+                else if calculatorModel.getStack().last != nil && ["%", "-/+"].contains(calculatorModel.getStack().last!) {
+                    calculatorModel.setNumber(number: symbol)
+                    calculatorModel.setSymbol(symbol: ",")
+                }
+                else
+                {
                     let newNumber = calculatorModel.getNumber() + symbol
                     calculatorModel.setNumber(number: newNumber)
                 }

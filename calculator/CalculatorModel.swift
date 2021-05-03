@@ -59,14 +59,19 @@ class CalculatorModel {
             result = tempResult.doubleValue * Double(lastNumber)!
         }
         else if lastSymbol == "/" {
-            result = tempResult.doubleValue / Double(lastNumber)!
+            if Double(lastNumber)! == 0 {
+                result = 0
+            }
+            else {
+                result = tempResult.doubleValue / Double(lastNumber)!
+            }
         }
         else if lastSymbol == "=" {
             result = Double(lastNumber)!
         }
         
         if !(processStack.count != 0 && ["%", "-/+"].contains(processStack.last!)) {
-            processStack.append(lastNumber)
+            processStack.append(NSNumber(value: Double(lastNumber)!).stringValue)
         }
         tempResult = NSNumber(value: result)
         processStack.append(newSymbol)

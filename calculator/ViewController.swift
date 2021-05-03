@@ -24,8 +24,20 @@ class ViewController: UIViewController {
     var calculateProcess : [String] = []{
         didSet{
             var text: String = "";
-            for symbol in calculateProcess {
-                text += symbol + " ";
+            var i = 0
+            while i < calculateProcess.count {
+                if i+1 < calculateProcess.count && calculateProcess[i+1] == "-/+" {
+                    text += "±(\(calculateProcess[i]))"
+                    i += 1
+                }
+                else if i+1 < calculateProcess.count && calculateProcess[i+1] == "%" {
+                    text += "\(calculateProcess[i])%"
+                    i += 1
+                }
+                else {
+                    text += calculateProcess[i] + " "
+                }
+                i += 1
             }
             calculateProcessLabel.text = "\(text)"
         }
